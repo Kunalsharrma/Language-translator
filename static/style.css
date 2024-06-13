@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(26, 26, 34);
+}
+.lang-selector {
+  margin: auto;
+  margin-top: 70px;
+  width: fit-content;
+  padding: 10px;
+}
+.initial-blocks {
+  display: flex;
+  width: fit-content;
+  margin: auto;
+  margin-top: 40px;
+}
+.text-translator,
+.doc-translator {
+  display: flex;
+  flex-direction: column;
+}
+
+#output {
+  margin-top: 70px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+#translated-text {
+  width: 45%;
+  margin: 10px 70px;
+}
+
+
+.keyword {
+  margin: 10px 10px;
+  border: 2px solid rgba(12, 51, 141, 0.622);
+  padding: 20px 20px;
+  border-radius: 5px;
+}
+#translate-btn {
+  border-radius: 50px;
+  border: none;
+  margin: 10px 10px;
+  padding: 15px 15px;
+  color: white;
+}
+#translate-btn:hover {
+  background-color: rgba(12, 51, 141, 0.622) !important;
+  transition: 0.8s;
+}
+.bord {
+  border-radius: 10px;
+  border: none;
+  margin: 10px 10px;
+  color: white;
+}
+label {
+  margin: 10px 10px;
+}
+
+#loading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.wave {
+  width: 5px;
+  height: 50px;
+  background: linear-gradient(
+    30deg,
+    rgba(12, 51, 141, 0.622),
+    rgb(59, 82, 122)
+  );
+  margin: 10px;
+  animation: wave 1s linear infinite;
+  border-radius: 20px;
+}
+
+.wave:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.wave:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.wave:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.wave:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.wave:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.wave:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.wave:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+.wave:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(12, 51, 141, 0.622);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+.keyword::before {
+  content: attr(data-translation) " (" attr(data-frequency) ")";
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(12, 51, 141, 0.622);
+  color: #fff;
+  margin: 20px 20px;
+  padding: 18px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: default;
+}
+
+.keyword:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.container-meter {
+  width: 312px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  margin-top: 120px;
+  margin-left: 170px;
+}
+.gauge-a {
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(255,255,255,.2);
+  width: 300px;
+  height: 150px;
+  top: 0%;
+  border-radius: 250px 250px 0px 0px;
+}
+.gauge-b {
+  z-index: 3;
+  position: absolute;
+  background-color: #222;
+  width: 150px;
+  height: 125px;
+  top: 75px;
+  margin-left: 75px;
+  margin-right: auto;
+  border-radius: 250px 250px 0px 0px;
+}
+.gauge-c {
+  z-index: 2;
+  position: absolute;
+  background-color: rgba(12, 51, 141, 0.622);
+  width: 300px;
+  height: 150px;
+  top: 151px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0px 0px 200px 200px;
+  transform-origin: center top;
+  transition: all 1.3s ease-in-out;
+}
+.container-meter:hover .gauge-c {  transform: rotate(var(--rotation, 0deg));
+}
+.container-meter:hover .gauge-data { color: rgba(255,255,255,1); }
+.gauge-data {
+  z-index: 4;
+  color: rgba(255,255,255,.2);
+  font-size: 1.5em;
+  line-height: 25px;
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 1s ease-out;
+}
+
+
+#percent{
+  font-size: 18px;
+}
+
+#accu-key{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.accuracy{
+  width: 100%;
+  height: 300px;
+}
+
+#keywords{
+  width: 100%;
+  height: 200px;
+}
+#keys{
+  margin-top: 80px;
+}
